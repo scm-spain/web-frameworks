@@ -1,0 +1,824 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>frontend styleguide</title>
+
+        <link rel="stylesheet" href="/mvc/content/themes/fotocasa/modules/header/selectors.css" />
+        <link rel="stylesheet" href="/mvc/content/themes/fotocasa/bundles/generic/selectors.css" />
+        <link rel="stylesheet" href="/mvc/content/octopus/base/tables/selectors.css" />
+        <link rel="stylesheet" href="/mvc/content/octopus/components/linklist/selectors.css" />
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+        <style>
+           
+            code {
+                color: #d3e1e1;
+                background: #002b36;
+                border-radius: 3px;
+                padding: 0 2px;
+            }
+
+            .guide-list-numbered {
+                list-style: decimal;
+            }
+
+            .guide-list-numbered ol {
+                list-style: decimal;
+                margin: 0 0 0 1.5em;
+            }
+
+            .guide-list-bullet {
+                list-style: square;
+            }
+
+            .guide-list-bullet ol {
+                list-style: square;
+                margin: 0 0 0 1.5em;
+            }
+
+            samp {
+                border: 1px solid #e4e4e4;
+                background: #fafafa;
+                color: #666;
+                display: inline-block;
+                font-family: sans-serif;
+                font-size: 12px;
+                padding: 0 2px;
+                line-height: 1.2;
+                border-radius: 3px;
+            }
+
+            .guide-alpha,
+            .guide-beta {
+                font-family: "Lato";
+                font-weight: 300;
+            }
+
+            .guide-alpha:first-child,
+            .guide-beta:first-child {
+                margin: 1em 0;
+            }
+
+            .guide-alpha {
+                font-size: 32px;
+            }
+
+            .guide-beta {
+                font-size: 24px;
+            }
+
+            .guide-blockquote {
+                font-style: italic;
+                font-size: 14px;
+                color: #888;
+            }
+
+            .guide-blockquote:after {content: close-quote}
+            .guide-blockquote:before {content: open-quote}
+
+            .code-example {
+                border-left: 4px solid #eee;
+                background: #fff;
+                padding: 0;
+                border-radius: 0;
+                display: block;
+            }
+
+            .file-structure code {
+                display: none;
+            }
+
+            .file-structure code.active {
+                display: block;
+            }
+
+            pre {
+                border: 0 !important;
+                margin: 0;
+                background-color: transparent !important;
+            }
+
+            div[role=main] {
+                max-width: 1080px;
+                margin: auto;
+            }
+        </style>
+
+
+        <script src="../Scripts/jquery-1.10.1.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <link href="http://jmblog.github.com/color-themes-for-google-code-prettify/css/themes/github.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div role="main" class="page">
+            <header class="header">
+                <div id="toolbar">
+                    <nav class="header_nav">
+                        <ul>
+                            <li>
+                                <a target="_parent" href="#"><span>Setup</span></a>
+                            </li>
+                            <li>
+                                <a target="_parent" href="#"><span>Layout</span></a>
+                            </li>
+                            <li>
+                                <a target="_parent" href="#"><span>Base</span></a>
+                            </li>
+                            <li>
+                                <a target="_parent" href="#"><span>Components</span></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <nav id="table-of-contents">
+                <h1 class="guide-alpha">Table of contents</h1>
+                <ol class="guide-list-bullet">
+                    <li>
+                        <a href="#setup">Setup</a>
+                        <ol>
+                            <li><a>Installing Sass</a></li>
+                            <li><a>Installing the Visual Studio Tools</a></li>
+                            <li><a>Installing LiveReload</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <a href="#file-structure">File structure</a>
+                        <ol>
+                            <li>
+                                <a href="#file-structure_base">Base</a>
+                                <ol>
+                                    <li><a href="#file-structure_base_typography">typography</a></li>
+                                    <li><a href="#file-structure_base_lists">lists</a></li>
+                                    <li><a href="#file-structure_base_tables">tables</a></li>
+                                    <li><a href="#file-structure_base_forms">forms</a></li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a href="#file-structure_components">Components</a>
+                                <ol>
+                                    <li><a href="#file-structure_components_box">box</a></li>
+                                    <li><a href="#file-structure_components_dialog">dialog</a></li>
+                                    <li><a href="#file-structure_components_message">message</a></li>
+                                    <li><a href="#file-structure_components_tooltip">tooltip</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><a href="#naming-conventions">Naming conventions</a></li>
+                </ol>
+            </nav>
+
+            <section id="setup">
+
+                <h1 class="guide-alpha">Setup</h1>
+
+                <h2 class="guide-beta">Installing Sass</h2>
+
+                <blockquote class="guide-blockquote">
+                    Sass makes CSS fun again. Sass is an extension of CSS3, adding nested rules, variables, mixins, selector inheritance, and more. It’s translated to well-formatted, standard CSS using the command line tool or a web-framework plugin.
+                </blockquote>
+
+                <ol class="guide-list-numbered">
+                    <li>Download the <a target="_blank" href="http://rubyinstaller.org/downloads">ruby language installer</a></li>
+                    <li>On install check the <samp>Add ruby to your PATH</samp></li>
+                    <li>Open the command line</li>
+                    <li>Check your ruby installation with: <code>&gt; ruby --version</code></li>
+                    <li>Install sass: <code>&gt; gem install sass</code></li>
+                </ol>
+
+                <h2 class="guide-beta">Installing the Visual Studio Tools</h2>
+
+                <ol class="guide-list-numbered">
+                    <li>
+                        Install <a target="_blank" href="http://visualstudiogallery.msdn.microsoft.com/07d54d12-7133-4e15-becb-6f451ea3bea6">Web Essentials</a>
+                        
+                    </li>
+                    <li>
+                        Install <a target="_blank" href="http://visualstudiogallery.msdn.microsoft.com/2b96d16a-c986-4501-8f97-8008f9db141a">Mindscape Web Workbench</a>
+                    </li>
+                    <li>
+                        Configure Mindscape Web Workbench<br />
+                        Goto <samp>Herramientas</samp> &gt; <samp>Opciones</samp> &gt; <samp>Web Workbench</samp> &gt; <samp>Add generated files to project</samp> &gt; <samp>False</samp><br />
+                        Goto <samp>Herramientas</samp> &gt; <samp>Opciones</samp> &gt; <samp>Web Workbench</samp> &gt; <samp>Disable Sass Compilation</samp> &gt; <samp>True</samp>
+                    </li>
+                </ol>
+
+
+                <h2 class="guide-beta">Installing LiveReload</h2>
+
+                <blockquote class="guide-blockquote">
+                    LiveReload monitors changes in the file system. As soon as you save a file, it is preprocessed as needed, and the browser is refreshed.
+                    Even cooler, when you change a CSS file or an image, the browser is updated instantly without reloading the page.
+                </blockquote>
+
+                <ol class="guide-list-numbered">
+                    <li>Install <a href="http://livereload.com/">livereload</a></li>
+                    <li>
+                        Install the browser livereload plugins for your browser of choice:
+                        <a target="_blank" href="https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei">Chrome</a> or <a target="_blank" href="https://addons.mozilla.org/es/firefox/addon/livereload/">Firefox:</a> 
+                    </li>
+                    <li>Open the livereload app</li>
+                    <li>Add a new project</li>
+                    <li>Choose the path of the folder you want livereload to monitor</li>
+                    <li>Select your project and type the url you use for development, ex: <a target="_blank" href="http://dev.fotocasa.es">http://dev.fotocasa.es</a></li>
+                    <li>
+                        Go to your web browser and enable livereload, the live reload app will update the number of
+                        browsers connected at the bottom
+                    </li>
+                    <li>
+                        Open a sass file within your editor of choice. Make a change. Save the file. See it inmediately on your browser =)
+                    </li>
+                </ol>
+            </section>
+
+            <section id="naming-conventions">
+                <h1 class="guide-alpha">Naming conventions</h1>
+                <blockquote class="guide-blockquote">
+                    There are only two hard things in Computer Science: cache invalidation and naming things.
+                    <small>-- Phil Karlton</small>
+                </blockquote>
+
+                <p>These are *guidelines*, use your judgement when breaking the rules</p>
+
+           
+                <strong>all selectors should go in *lowercase*</strong>
+	            
+<pre class="prettyprint"><code class="code-example">div .box .filters {color: red}</code></pre>
+	            
+
+	            why?
+                <ul class="guide-list-bullet">
+	                <li>visual consistency: html tags go in lowercase, classes should go to</li>
+	                <li>simplicity: .property-title is different from .Property-title, don't make me guess</li>
+                </ul>
+
+
+
+               
+                    <strong>avoid ids and attributes other than classes on your css selectors</strong><br />
+	                <pre class="prettyprint"><code class="code-example">#propertyList {color: red}</code></pre>
+	                <pre class="prettyprint"><code class="code-example">.property-list {color: red}</code></pre>
+              
+	
+	         
+                    <strong>an id is always and unique selector</strong><br />
+	                if your tag is indeed unique use a class prefixed by unique-<br />
+	                <pre class="prettyprint"><code class="code-example">.unique-property-list {color: red}</code></pre>
+              
+
+	            why?
+
+                <ul class="guide-list-bullet">
+	                <li>
+                        conflict avoidance:<br />
+	                    leaving your ids and data attributes for exclusive use on your javascript,
+	                    frees you from knowing if deleting a certain id will cause changes to the way that element looks
+                    </li>
+                    <li>
+	                    avoiding specificity issues:<br />
+                        ids have greater specifity than classes, avoiding ids altogether
+	                    will prevent specifity problems
+                    </li>
+                    <li>
+	                    modularity:<br />
+                        id implies uniqueness, avoiding ids can help you think in terms of groups of things rather than "this specific thing"
+                    </li>
+                </ul>
+
+                <p>
+                    <strong>use meaningful class names</strong>
+	                avoid class names that specify what they look like in their css rules
+                </p>
+	                <pre class="prettyprint"><code class="code-example">.big-red-box {font-size: 16px; background: red}</code></pre>
+	                <pre class="prettyprint"><code class="code-example">.alert {font-size: 16px; background: red} // better</code></pre>
+                <p>
+                    <strong>use "searchable" class names</strong>
+                </p>
+	                .property-module or .property-unit is better than just .property
+	                if you're working on a real estate app a search for "property" will yield thousands of results
+
+                <p>
+                    <strong>don't use "ad", or "ad-" as an id or class name</strong>
+                </p>
+	            ad blockers will block your content
+            </section>
+
+            <section id="file-structure">
+
+                Inside each folder there is a meta.scss and a selectors.scss
+
+                Example:
+                <p>
+                    Components > Box > meta.scss
+                    inside this file go the mixins that encapsulate the css rules
+                    that represent the visual idea of a box
+                </p>
+
+                
+<pre class="prettyprint">
+<code class="code-example">
+@mixin box {
+    border: 1px solid black;
+    padding: 10px;
+}
+</code>
+</pre>
+                
+
+                <p>
+                    Components > Box > selectors.scss
+                    inside this file we associate that visual representation with a css selector
+                </p>
+
+                
+<pre class="prettyprint">
+<code class="code-example">
+@import "meta";
+
+.box {
+    @import box;
+}
+</code>
+</pre>
+
+                this way we can separate the css rules form the selector, and apply those rules
+                to any selector we see fit.
+
+                <section id="file-structure_helpers">
+                    <h1 class="guide-alpha">helpers, normalize and theme</h1>
+
+                    <p>
+                        <samp>helpers.scss</samp> provides mixins provides abstractions for css rules that require
+                        vendor prefixes like gradients, encapsulates common styling patterns difficult to accomplish
+                        with a simple css rule like 
+                        clearfix, ellipsis and abs-center.
+                    </p>
+                    <p>
+                        <samp>normalize.scss</samp> normalizes (thanks Captain Obvious) browser styling, provinding a clean and even surface to begin styling the elements
+                    </p>
+                    <p>
+                        <samp>theme.scss</samp> has the initialized variables that control color and structure.
+                        Things like <samp>$page-width</samp>, <samp>$text-size-alpha</samp>, <samp>$text-color-muted</samp> go here
+                    </p>
+                </section>
+
+
+
+                <section id="file-structure_base">
+                    <h1 class="guide-alpha">base</h1>
+                    <p>
+                        Basic elements and typography.
+                        Typography controls vertical rhythm.
+                        Grid controls horizontal rhythm.
+                    </p>
+
+                    <h2 id="file-structure_base_typography" class="guide-beta">typography</h2>
+
+                    <h1>heading level 1</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut <strong>labore</strong> et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu <a href="#">fugiat nulla pariatur</a>. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <h2>heading level 2</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt <a href="#">ut labore et dolore magna</a> aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                    <h3>heading level 3</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt <a href="#">ut labore et dolore magna</a> aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <small>lorem ipsum</small>
+                    </p>
+
+                    <h2 id="file-structure_base_lists" class="guide-beta">lists</h2>
+
+                    <h3>bullet list</h3>
+                    <ul class="bullet-list bullet-1">
+                        <li>officia deserunt mollit anim id</li>
+                        <li>
+                            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        </li>
+                        <li>n ullamco laboris nisi ut aliquip ex</li>
+                    </ul>
+
+                    <h3>numbered list</h3>
+                    <ul class="bullet-list bullet-num">
+                        <li>officia deserunt mollit anim id</li>
+                        <li>
+                            ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        </li>
+                        <li>n ullamco laboris nisi ut aliquip ex</li>
+                    </ul>
+
+                    <h2 id="file-structure_base_tables" class="guide-beta">tables</h2>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>table header</th>
+                                <th>table header</th>
+                                <th>table header</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table table--zebra">
+                        <thead>
+                            <tr>
+                                <th>table header</th>
+                                <th>table header</th>
+                                <th>table header</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                            <tr>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                                <td>table cell</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="file-structure_base_forms" class="guide-beta">forms <a data-code="#form-code">show code</a></h2>
+                    
+                    <p>snippet shortcut: <samp>ftc-form</samp></p>
+                    
+<pre class="prettyprint">
+<code class="code-example" id="form-code">
+&lt;form method=&quot;post&quot; action=&quot;/&quot;&gt;
+    &lt;div class=&quot;form&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;{{ fieldset-legend }}&lt;/legend&gt;
+            &lt;ol&gt;
+                &lt;li class=&quot;form_field&quot;&gt;
+                    &lt;label class=&quot;form_field_label&quot;&gt;{{ text-label }}&lt;/label&gt;
+                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                        &lt;input type=&quot;text&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;form_field&quot;&gt;
+                    &lt;label class=&quot;form_field_label&quot;&gt;{{ password-label }}&lt;/label&gt;
+                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                        &lt;input type=&quot;password&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;form_field&quot;&gt;
+                    &lt;label class=&quot;form_field_label&quot;&gt;{{ select-label }}&lt;/label&gt;
+                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                        &lt;select&gt;
+                            &lt;option&gt;{{ select-option }}&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;form_field&quot;&gt;
+                    &lt;label class=&quot;form_field_label&quot;&gt;{{ o-link-list-label }}&lt;/label&gt;
+                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                        &lt;div&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;
+                                    &lt;input id=&quot;checkbox-1&quot; type=&quot;checkbox&quot; /&gt;
+                                    &lt;label for=&quot;checkbox-1&quot;&gt;{{ checkbox-1-label }}&lt;/label&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;input id=&quot;checkbox-2&quot; type=&quot;checkbox&quot; /&gt;
+                                    &lt;label for=&quot;checkbox-2&quot;&gt;{{ checkbox-2-label }}&lt;/label&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;
+                                    &lt;input id=&quot;checkbox-3&quot; type=&quot;checkbox&quot; /&gt;
+                                    &lt;label for=&quot;checkbox-3&quot;&gt;{{ checkbox-3-label }}&lt;/label&gt;
+                                &lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/li&gt;
+            &lt;/ol&gt;
+            &lt;button&gt;continuar&lt;/button&gt;
+        &lt;/fieldset&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+</code>
+</pre>
+
+                    <form method="get" action="/">
+                        <fieldset class="form">
+                            <ol>
+                                <li class="form_field">
+                                    <label>label</label>
+                                    <div>
+                                        <input type="text" value="" />
+                                    </div>
+                                </li>
+                                <li class="form_field">
+                                    <label>label</label>
+                                    <div>
+                                        <input type="text" value="" />
+                                    </div>
+                                </li>
+                                <li class="form_field">
+                                    <label>label</label>
+                                    <div>
+                                        <input type="text" value="" />
+                                    </div>
+                                </li>
+                                <li class="form_field">
+                                    <label>label</label>
+                                    <div>
+                                        <input type="text" value="" />
+                                    </div>
+                                </li>
+                            </ol>
+                            <div>
+                                <button>continuar</button>
+                            </div>
+                        </fieldset>
+
+                    </form>
+
+                    <div style="max-width: 540px">
+                        <form method="get" action="/">
+                            <fieldset class="form">
+                                <legend>form legend</legend>
+                                <ol>
+                                    <li class="form_field">
+                                        <label class="form_field_label">label</label>
+                                        <div class="form_field_inputs">
+                                            <input type="text" value="" />
+                                            <div class="validator validator-error">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="form_field">
+                                        <label class="form_field_label">label</label>
+                                        <div class="form_field_inputs">
+                                            <input type="text" value="" />
+                                        </div>
+                                    </li>
+                                    <li class="form_field">
+                                        <label class="form_field_label">label</label>
+                                        <div class="form_field_inputs">
+                                            <input type="text" value="" />
+                                        </div>
+                                    </li>
+                                    <li class="form_field">
+                                        <label class="form_field_label">label</label>
+                                        <div class="form_field_inputs">
+                                            <input type="text" value="" />
+                                        </div>
+                                    </li>
+                                </ol>
+                                <div>
+                                    <button>continuar</button>
+                                </div>
+                            </fieldset>
+
+                        </form>
+                    </div>
+                    
+                </section>
+
+                <section id="icons">
+
+                </section>
+
+                <section id="file-structure_components" class="file-structure_components">
+                    <h1 class="guide-alpha">components</h1>
+                    <p>
+                        generic user interface components these components are meant to stand alone.
+                        their structure and color can be modified by app specific <a href="#file-structure_modules">modules</a> and <a href="#file-structure_views">views</a>
+                    </p>
+
+                    <h2 class="guide-beta">autocomplete <a>show example</a> <a>show code</a></h2>
+
+                    <code class="code-example">
+
+                    </code>
+
+                    <h2 id="file-structure_components_box" class="guide-beta">box <a data-code="#box-code">show code</a></h2>
+
+                    
+<pre class="prettyprint">
+<code id="box-code" class="code-example">
+&lt;article class=&quot;box&quot;&gt;
+    &lt;h1 class=&quot;box_title&quot;&gt;
+        {{ box_title }}
+    &lt;/h1&gt;
+    &lt;div class=&quot;box_content&quot;&gt;
+        {{ box_content }}
+    &lt;/div&gt;
+&lt;/article&gt;
+</code>
+</pre>
+
+                    <article class="box">
+                        <h1 class="box_title">this is the box title</h1>
+                        <div class="box_content">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                        </div>
+                    </article>
+                    
+
+                    <h2 id="file-structure_components_dialog" class="guide-beta">dialog <a>show example</a> <a data-code="#dialog-code">show code</a></h2>
+                    <p>snippet shortcut: <samp>ftc-dialog</samp></p>
+                    
+<pre class="prettyprint">
+<code id="dialog-code" class="code-example">
+&lt;section class=&quot;o-dialog&quot;&gt;
+    &lt;header class=&quot;o-dialog_header&quot;&gt;
+        &lt;h1 class=&quot;o-dialog_title&quot;&gt;
+            {{ dialog_title }}
+        &lt;/h1&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;o-dialog_body&quot;&gt;
+        {{ dialog_body }}
+    &lt;/div&gt;
+    &lt;footer class=&quot;o-dialog_footer&quot;&gt;
+        &lt;button&gt;cancel&lt;/button&gt;
+        &lt;button&gt;ok&lt;/button&gt;
+    &lt;/footer&gt;
+&lt;/section&gt;
+</code>
+</pre>
+
+
+                    <section class="o-dialog o-dialog--is-active" style="position: static">
+                        <header class="o-dialog_header">
+                            <h1 class="o-dialog_title">dialog title</h1>
+                        </header>
+                        <div class="o-dialog_body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum.
+                        </div>
+                        <footer class="o-dialog_footer">
+                            <button>cancelar</button>
+                            <button class="button button--primary">aceptar</button>
+                        </footer>
+                    </section>
+                    
+
+                    <h2 id="file-structure_components_dropdown" class="guide-beta">dropdown <a>show example</a> <a>show code</a></h2>
+
+                    <h2 id="file-structure_components_message" class="guide-beta">message <a>show example</a> <a data-code="#message-code">show code</a></h2>
+                    <p>snippet shortcut: <samp>ftc-message</samp></p>
+                    
+<pre class="prettyprint">
+<code id="message-code" class="code-example">
+&lt;p class=&quot;message message-success&quot;&gt;
+    congratulations! this is a success message
+&lt;/p&gt;
+
+&lt;p class=&quot;message message-warning&quot;&gt;
+    beware! this is a success message
+&lt;/p&gt;
+
+&lt;p class=&quot;message message-error&quot;&gt;
+    watchout! this is an error message
+&lt;/p&gt;
+</code>
+</pre>
+
+                    
+
+                    <h2 id="file-structure_components_o-link-list">Switch list</h2>
+
+                    <div class="o-link-list">
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="o-link-list" /> item number 1
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="o-link-list" /> item number 2
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="o-link-list" /> item number 3
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="o-link-list" /> item number 4
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                        <h2 id="file-structure_components_popover" class="guide-beta">popover <a>show example</a> <a>show code</a></h2>
+
+                        <h2 id="file-structure_components_rating" class="guide-beta">rating <a>show example</a> <a>show code</a></h2>
+
+                        <fieldset class="rating">
+                            <legend></legend>
+                            <input type="radio" name="thing-rating" value="1" />
+                            <input type="radio" name="thing-rating" value="2" />
+                            <input type="radio" name="thing-rating" value="3" />
+                            <input type="radio" name="thing-rating" value="4" />
+                            <input type="radio" name="thing-rating" value="5" />
+                        </fieldset>
+
+                        <h2 id="file-structure_components_tab" class="guide-beta">tab <a>show example</a> <a>show code</a></h2>
+
+                        <h2 id="file-structure_components_tooltip" class="guide-beta">tooltip <a>show example</a> <a data-code="#tooltip-code">show code</a></h2>
+                        <p>snippet shortcut: <samp>ftc-tooltip</samp></p>
+
+<pre class="prettyprint">
+<code id="tooltip-code" class="code-example">
+&lt;div class=&quot;tooltip&quot;&gt;
+    &lt;button class=&quot;tooltip_close&quot;&gt;&lt;/button&gt;
+    {{ tooltip-content }}
+&lt;/div&gt;
+</code>
+</pre>
+
+</section>
+
+                <section id="file-structure_modules">
+                    <h1 class="guide-alpha">modules</h1>
+
+                    <p>Application specific modules</p>
+
+                </section>
+
+
+                <section id="file-structure_views">
+                    <h1 class="guide-alpha">views</h1>
+
+                </section>
+            </section>
+        </div>
+
+        
+
+        <script>
+            $(document).on("click", "[data-code]", function () {
+                var selector = $(this).data("code");
+                $(selector).toggleClass("active");
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,938 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Css Base</title>
+        <link rel="stylesheet" href="css/selectors.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+
+
+        <script src="js/jquery-1.10.1.js"></script>
+        <script src="js/styleguide.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <link href="http://jmblog.github.com/color-themes-for-google-code-prettify/css/themes/github.css" rel="stylesheet" />
+
+    </head>
+<body>
+    <div class="site-wrapper_styleGuide">
+        
+
+            <input type="checkbox" id="drawer-toggle" name="drawer-toggle" />
+            <label for="drawer-toggle" id="drawer-toggle-label"></label>
+            <nav class="drawer_nav" id="drawer">
+                <ul>
+                    <li>
+                        <a target="_parent" href="#"><span>Getting Started</span></a>
+                    </li>
+                    <li>
+                        <a target="_parent" href="#"><span>Layout</span></a>
+                    </li>
+                    <li>
+                        <a target="_parent" href="#"><span>Grid</span></a>
+                    </li>
+                    <li>
+                        <a target="_parent" href="base.html"><span>CSS Base</span></a>
+                        <a href="#colors" class="drawer_nav_subsection">Colors</a>
+                        <a href="#basefont" class="drawer_nav_subsection">Typography</a>
+                        <ul>
+                            <li><a href="#basefont">Base font</a></li>
+                            <li><a href="#emphasis">Links, emphasis, blockquote (...)</a></li>
+                            <li><a href="#headings">Headings</a></li>
+                            <li><a href="#utility">Utility classes</a></li>
+                        </ul>
+                        <a href="#bullet" class="drawer_nav_subsection">Lists</a>
+                        <ul>
+                            <li><a href="#bullet">Bullet list</a></li>
+                            <li><a href="#numbered">Numbered list</a></li>
+                        </ul>
+                        <a href="#normaltable" class="drawer_nav_subsection">Tables</a>
+                        <ul>
+                            <li><a href="#normaltable">Normal table</a></li>
+                            <li><a href="#zebratable">Zebra table</a></li>
+                        </ul>
+                        <a href="#basicform" class="drawer_nav_subsection">Forms</a>
+                        <ul>
+                            <li><a href="#basicform">Basic form</a></li>
+                            <li><a href="#validationmsg">Validation messages</a></li>
+                        </ul>
+                        <a href="#normaltable" class="drawer_nav_subsection">Lazy image</a>
+                        <ul>
+                            <li><a href="#lazyimg">Lazy Image</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a target="_parent" href="icons.html"><span>Icons</span></a>
+                    </li>
+                    <li>
+                        <a target="_parent" href="components.html"><span>Components</span></a>
+                    </li>
+                </ul>
+            </nav>
+
+      
+
+        <header class="header">
+            <div class="header_logo_styleGuide">
+                <a href="home.html">
+                    LOGO StyleGuide
+                </a>
+            </div>
+            <div id="toolbar" class="header_nav_wrapper">
+                <nav class="header_nav">
+                    <ul>
+                        <li>
+                            <a target="_parent" href="#"><span>Getting Started</span></a>
+                        </li>
+                        <li>
+                            <a target="_parent" href="#"><span>Layout</span></a>
+                        </li>
+                        <li>
+                            <a target="_parent" href="#"><span>Grid</span></a>
+                        </li>
+                        <li>
+                            <a target="_parent" href="base.html"><span>CSS Base</span></a>
+                        </li>
+                        <li>
+                            <a target="_parent" href="icons.html"><span>Icons</span></a>
+                        </li>
+                        <li>
+                            <a target="_parent" href="components.html"><span>Components</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="content-wrapper_styleGuide">
+            <div class="principal-section-styleguide">
+                <h1 class="guide-alpha">Css Base</h1>
+                <p>
+                    Establemos el formato básico de los distintos elementos HTML del portal.
+                </p>
+            </div>
+            <div class="menu_styleGuide">
+                <nav id="table-of-contents">
+                    <ul>
+                        <li data-section="typography" class="styleguide-header">Colors</li>
+                        <li>
+                            <ul class="styleguide-nav-subsections">
+                                <li><a href="#colours">Colors</a></li>
+                            </ul>
+                        </li>
+                        <li data-section="typography" class="styleguide-header">Typography</li>
+                        <li>
+                            <ul class="styleguide-nav-subsections">
+                                <li><a href="#basefont">Base font</a></li>
+                                <li><a href="#emphasis">Links, emphasis, blockquote (...)</a></li>
+                                <li><a href="#headings">Headings</a></li>
+                                <li><a href="#utility">Utility classes</a></li>
+                            </ul>
+                        </li>
+                        <li data-section="lists" class="styleguide-header">Lists</li>
+                        <li>
+                            <ul class="styleguide-nav-subsections">
+                                <li><a href="#bullet">Bullet list</a></li>
+                                <li><a href="#numbered">Numbered list</a></li>
+                            </ul>
+                        </li>
+                        <li data-section="tables" class="styleguide-header">Tables</li>
+                        <li>
+                            <ul class="styleguide-nav-subsections">
+                                <li><a href="#normaltable">Normal table</a></li>
+                                <li><a href="#zebratable">Zebra table</a></li>
+                            </ul>
+                        </li>
+                        <li data-section="tables" class="styleguide-header">Forms</li>
+                        <li>
+                            <ul class="styleguide-nav-subsections">
+                                <li><a href="#basicform">Basic form</a></li>
+                                <li><a href="#validationmsg">Validation messages</a></li>
+                            </ul>
+                        </li>
+                        <li data-section="tables" class="styleguide-header">Lazy Image</li>
+                        <li>
+                            <ul class="styleguide-nav-subsections">
+                                <li><a href="#lazyimg">Lazy Image</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="content_styleGuide">
+                <section id="colours" class="colours">
+                    <h1 class="guide-beta">Colours</h1>
+                    <p>Establecemos una paleta de colores básicas.</p>
+                    <section>
+                        <div>
+                            <ul class="palette-colours">
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #333;color: white">Text <br />#333333</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #f5f5f5;color: #333">Background<br />#f5f5f5</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #eaeaea;color: #333">Grey<br />#eaeaea</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #f1f9fd; color: #333">Notification<br />#f1f9fd</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #b7e1f4; color: #333">Baby blue<br />#b7e1f4</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #09f;color: white">Action<br />#09f</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #3498db; color: #fff">Primary<br />#3498db</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #f60;color: #fff">Accent<br />#f60</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #40b31a; color: #fff">Good<br />#40b31a</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="round-colour-wrapper">
+                                        <span class="round-colour" style="background-color: #b21919; color: #fff">Error<br />#b21919</span>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
+                <section id="typography" class="styleguide-section">
+                    <h1 class="guide-beta">Typography</h1>
+                    <p>Octopus define una serie de reglas básicas para controlar la tipografía del site.</p>
+                    <section class="guide-subsection">
+                        <h2 class="guide-gamma no-border-top">Base font</h2>
+                        <p>
+                            Open Sans es una tipografía humanista Sans Serif diseñada por Steve Matteson. Open Sans fue diseñada con una tensión vertical, las formas abiertas y una apariencia neutral y amigable. Fue optimizada para la impresión, web e interfaces móviles, y tiene excelentes características de legibilidad en sus letras.
+                        </p>
+                        <p>
+                            Utilizamos como tipografía base la <b>OpenSans</b>, en sus familias <i>"regular"</i> y <i>"semibold"</i>. El tamaño base de la tipografía es de 14px.
+                        </p>
+
+                        <div class="html-example">
+                            <div class="styleguide-exemple">Example</div>
+                            <p style="font-weight: 400">Open Sans regular: ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.</p>
+                            <p style="font-weight: 600">Open Sans semibold: ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.</p>
+                        </div>
+                    </section>
+                    <section class="guide-subsection" id="emphasis">
+                        <h2 class="guide-gamma no-border-top">Links, emphasis, blockquote, cite and small text</h2>
+                        <p>We use html native elements to add importance to a piece of text:</p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">
+    &lt;a&gt;This is a Octopus link&lt;/a&gt;        
+    This is an &lt;i&gt;alternative voice&lt;/i&gt; Octopus text.
+    This is a Octopus text with &lt;em&gt;emphasis&lt;/em&gt;
+    This is a &lt;b&gt;bold&lt;/b&gt; Octopus text.
+    This is a &lt;strong&gt;important&lt;/strong&gt; Octopus text.
+    &lt;small&gt;This is a Octopus small text&lt;/small&gt;
+    &lt;blockquote&gt;This is a Octopus blockquote&lt;/blockquote&gt;
+    &lt;cite&gt;This is a Octopus cite&lt;/cite&gt;
+                        </code></pre>
+                            </div>
+
+                            <div class="html-example">
+                                <table class="table guide-table table--zebra">
+                                    <thead>
+                                        <tr>
+                                            <th>Example</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#">This is a Octopus link ...</a> <code>&lt;a&gt;&lt;/a&gt;</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td>This is an <i>alternative voice</i> Octopus text ... <code>&lt;i&gt;&lt;/i&gt;</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td>This is a Octopus text with <em>emphasis</em> ... <code>&lt;em&gt;&lt;/em&gt;</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td>This is a <b>bold</b> Octopus text ... <code>&lt;b&gt;&lt;/b&gt;</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td>This is a <strong>important</strong> Octopus text ... <code>&lt;strong&gt;&lt;/strong&gt;</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><small>This is a Octopus small text</small> ... <code>&lt;small&gt;&lt;/small&gt;</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><cite>This is a Octopus cite</cite>... <code>&lt;cite&gt;&lt;/cite&gt;</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><blockquote>This is a Octopus blockquote... <code>&lt;blockquote&gt;&lt;/blockquote&gt;</code></blockquote></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="guide-subsection" id="headings">
+                        <h2 class="guide-gamma">Headings</h2>
+                        <p>Contemplamos cuatro niveles de heading: <code>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt; y &lt;h4&gt;</code></p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">           
+    &lt;h1&gt;This is a Octopus H1 header&lt;/h1&gt;
+    &lt;h2&gt;This is a Octopus H2 header&lt;/h2&gt;
+    &lt;h3&gt;This is a Octopus H3 header&lt;/h3&gt;
+    &lt;h4&gt;This is a Octopus H4 header&lt;/h4&gt;
+                        </code></pre>
+                            </div>
+                            <div class="html-example">
+                                <table class="table guide-table table--zebra">
+                                    <thead>
+                                        <tr>
+                                            <th>Demo Html</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><h1>This is a Octopus H1 header ... <code>&lt;h1&gt;&lt;/h1&gt;</code></h1></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h2>This is a Octopus H2 header ... <code>&lt;h2&gt;&lt;/h2&gt;</code></h2></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h3>This is a Octopus H3 header ... <code>&lt;h3&gt;&lt;/h3&gt;</code></h3></td>
+                                        </tr>
+                                        <tr>
+                                            <td><h4>This is a Octopus H4 header ... <code>&lt;h4&gt;&lt;/h4&gt;</code></h4></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </section>
+                </section>
+         
+                <section class="guide-subsection" id="utility">
+                    <h2 class="guide-gamma">Utility classes</h2>
+                    <p>Octopus provides a few more css classes to handle simple tasks like changing font size. These can be combined with all others:</p>
+                    <p><small>CSS CLASSES:</small> <code class="guide-class">text-alfa</code> <code class="guide-class">text-beta</code> <code class="guide-class">text-gamma</code> <code class="guide-class">text-delta</code> <code class="guide-class">text-omega</code></p>
+                    <div class="wrapper-code-exemple">
+                        <a href="#" class="button button--small" data-show-code>Show code</a>
+                        <div class="code-container">
+                            <pre class="prettyprint">
+                            <code class="code-example" id="form-code">           
+    &lt;p class=&quot;text-alpha&quot;&gt;This is an text-alfa Octopus text (24px)&lt;/p&gt;
+    &lt;p class=&quot;text-beta&quot;&gt;This is a text-beta Octopus text (20px)&lt;/p&gt;
+    &lt;p class=&quot;text-gamma&quot;&gt;This is a text-gamma Octopus text (16px)&lt;/p&gt;
+    &lt;p class=&quot;text-delta&quot;&gt;This is a text-delta Octopus text (12px)&lt;/p&gt;
+    &lt;p class=&quot;text-omega&quot;&gt;This is a text-omega Octopus text (10px)&lt;/p&gt;
+                        </code></pre>
+                        </div>
+                        <div class="html-example">
+                            <table class="table guide-table table--zebra">
+                                <thead>
+                                    <tr>
+                                        <th>Demo Html</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <p class="text-alpha">This is a text-alfa Octopus text (24px)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-beta">This is a text-beta Octopus text (20px)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-gamma">This is a text-gamma Octopus text (16px)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-delta">This is a text-delta Octopus text (12px)</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p class="text-omega">This is a "omega" Octopus text (10px)</p>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="list" class="styleguide-section">
+                    <h1 class="guide-beta">Lists</h1>
+                    <p>Octopus establece tres tipos de listas: lista con bullets, lista ordenada y lista sin estilo.</p>
+                    <section class="guide-subsection" id="bullet">
+                        <h2 class="guide-gamma">Bullet list</h2>
+                        <p><small>CSS CLASSES:</small> <code class="guide-class">list-bullet</code></p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">           
+    &lt;ul class=&quot;list-bullet&quot;&gt;
+        &lt;li&gt;First list item&lt;/li&gt;
+        &lt;li&gt;
+            Segond list item with some text: ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        &lt;/li&gt;
+        &lt;li&gt;Third list item&lt;/li&gt;
+    &lt;/ul&gt;
+                        </code></pre>
+                            </div>
+                            <div class="html-example">
+                            <div class="styleguide-exemple">Example</div>
+                                <h3>Things we love:</h3>
+                                <ul class="list-bullet">
+                                    <li>Peanuts</li>
+                                    <li>
+                                        The domesticated peanut is an amphidiploid or allotetraploid, meaning that it has two sets of chromosomes from two different species, thought to be A. duranensis and A. ipaensis. These likely combined in the wild to form the tetraploid species A. monticola, which gave rise to the domesticated peanut.[4] This domestication might have taken place in Paraguay or Bolivia, where the wildest strains grow today. Many pre-Columbian cultures, such as the Moche, depicted peanuts in their art.[5]
+                                    </li>
+                                    <li>Lists</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="guide-subsection" id="numbered">
+                        <h2 class="guide-gamma">Numbered list</h2>
+                        <p><small>CSS CLASSES:</small> <code class="guide-class">list-numbered</code></p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">           
+    &lt;ol class=&quot;list-numbered&quot;&gt;
+        &lt;li&gt;First list item&lt;/li&gt;
+        &lt;li&gt;
+            Segond list item with some text: ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        &lt;/li&gt;
+        &lt;li&gt;Third list item&lt;/li&gt;
+    &lt;/ol&gt;
+                        </code></pre>
+                            </div>
+                            <div class="html-example">
+                            <div class="styleguide-exemple">Example</div>
+                                <h3>Things we hate:</h3>
+                                <ol class="list-numbered">
+                                    <li>Frontend frameworks</li>
+                                    <li>Irony</li>
+                                    <li>Lists</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                   
+
+                </section>
+                <section id="table" class="styleguide-section">
+                    <h1 class="guide-beta">Tables</h1>
+                    <p>Octopus contempla las tablas normales y tablas con estilo cebra.</p>
+                    <section class="guide-subsection" id="normaltable">
+                        <h2 class="guide-gamma">Normal Table</h2>
+                        <p><small>CSS CLASSES:</small> <code class="guide-class">table</code></p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">           
+    &lt;table class=&quot;table&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;table header&lt;/th&gt;
+                &lt;th&gt;table header&lt;/th&gt;
+                &lt;th&gt;table header&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+                                </code></pre>
+                            </div>
+
+
+                            <div class="html-example">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>table header</th>
+                                            <th>table header</th>
+                                            <th>table header</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="guide-subsection" id="zebratable">
+                        <h2 class="guide-gamma">Zebra Table</h2>
+                        <p>Zebra striped table</p>
+                        <p><small>CSS CLASSES:</small> <code class="guide-class">table table--zebra</code></p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">           
+    &lt;table class=&quot;table table--zebra&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;table header&lt;/th&gt;
+                &lt;th&gt;table header&lt;/th&gt;
+                &lt;th&gt;table header&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+                &lt;td&gt;table cell&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+                                </code></pre>
+                            </div>
+
+                            <div class="html-example">
+                                <table class="table table--zebra">
+                                    <thead>
+                                        <tr>
+                                            <th>table header</th>
+                                            <th>table header</th>
+                                            <th>table header</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                        <tr>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                            <td>table cell</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+
+                </section>
+
+                <section id="form" class="styleguide-section">
+                    <h1 class="guide-beta">Forms</h1>
+                    <section class="guide-subsection" id="basicform">
+                        <p>snippet shortcut: <samp>ftc-form</samp></p>
+                        <h2 class="guide-gamma">Basic form elements</h2>
+                        <p>
+                            Establecemos los elementos básicos de un formulario.<br />
+                            Establecemos un ancho máximo para el formulario de 540px.
+                        </p>
+                        <a href="#" class="button button--small" data-show-code>Show code</a>
+                        <div class="code-container">
+                            <pre class="prettyprint">
+                            <code class="code-example" id="form-code">
+                &lt;form method=&quot;post&quot; action=&quot;/&quot;&gt;
+                    &lt;div class=&quot;form&quot;&gt;
+                        &lt;fieldset&gt;
+                            &lt;legend&gt;{{ fieldset-legend }}&lt;/legend&gt;
+                            &lt;ol&gt;
+                                &lt;li class=&quot;form_field&quot;&gt;
+                                    &lt;label class=&quot;form_field_label&quot;&gt;{{ text-label }}&lt;/label&gt;
+                                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                                        &lt;input type=&quot;text&quot; /&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;form_field&quot;&gt;
+                                    &lt;label class=&quot;form_field_label&quot;&gt;{{ password-label }}&lt;/label&gt;
+                                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                                        &lt;input type=&quot;password&quot; /&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;form_field&quot;&gt;
+                                    &lt;label class=&quot;form_field_label&quot;&gt;{{ select-label }}&lt;/label&gt;
+                                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                                        &lt;select&gt;
+                                            &lt;option&gt;{{ select-option }}&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                                &lt;li class=&quot;form_field&quot;&gt;
+                                    &lt;label class=&quot;form_field_label&quot;&gt;{{ o-link-list-label }}&lt;/label&gt;
+                                    &lt;div class=&quot;form_field_inputs&quot;&gt;
+                                        &lt;div&gt;
+                                            &lt;ul&gt;
+                                                &lt;li&gt;
+                                                    &lt;input id=&quot;checkbox-1&quot; type=&quot;checkbox&quot; /&gt;
+                                                    &lt;label for=&quot;checkbox-1&quot;&gt;{{ checkbox-1-label }}&lt;/label&gt;
+                                                &lt;/li&gt;
+                                                &lt;li&gt;
+                                                    &lt;input id=&quot;checkbox-2&quot; type=&quot;checkbox&quot; /&gt;
+                                                    &lt;label for=&quot;checkbox-2&quot;&gt;{{ checkbox-2-label }}&lt;/label&gt;
+                                                &lt;/li&gt;
+                                                &lt;li&gt;
+                                                    &lt;input id=&quot;checkbox-3&quot; type=&quot;checkbox&quot; /&gt;
+                                                    &lt;label for=&quot;checkbox-3&quot;&gt;{{ checkbox-3-label }}&lt;/label&gt;
+                                                &lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/li&gt;
+                            &lt;/ol&gt;
+                            &lt;button&gt;continuar&lt;/button&gt;
+                        &lt;/fieldset&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+                </code>
+                </pre>
+                        </div>
+                        <div class="html-example">
+                            <table class="table guide-table">
+                                <thead>
+                                    <tr>
+                                        <th>Rendered Html</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div style="max-width: 540px">
+                                                <form method="get" action="/">
+                                                    <fieldset class="form">
+                                                        <legend>form legend</legend>
+                                                        <ol>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">
+                                                                    Label + input
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="text" value="" />
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">
+                                                                    Label + input + disabled
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="text" value="" disabled="disabled" />
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field form_field--required">
+                                                                <label class="form_field_label">
+                                                                    Label + input + required
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="text" value="" aria-required="true" />
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">
+                                                                    Label + input + upload
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="file" value="" />
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">Label + select</label>
+                                                                <div class="form_field_inputs">
+                                                                    <select>
+                                                                        <option value="#">Option 1</option>
+                                                                        <option value="#">Option 2</option>
+                                                                        <option value="#">Option 3</option>
+                                                                    </select>
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">Label + select multiple</label>
+                                                                <div class="form_field_inputs">
+                                                                    <select multiple="multiple">
+                                                                        <option value="#">Option 1</option>
+                                                                        <option value="#">Option 2</option>
+                                                                        <option value="#">Option 3</option>
+                                                                    </select>
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">Label + textarea</label>
+                                                                <div class="form_field_inputs">
+                                                                    <textarea rows="4" cols="50" placeholder="placeholder"></textarea>
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">
+                                                                    Label + checkbox
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="checkbox" value="" />
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">
+                                                                    Label + checkbox + options
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="checkbox" value="" /><label>Yes</label>
+                                                                    <input type="checkbox" value="" /><label>No</label>
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">
+                                                                    Label + radio
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="radio" value="" />
+                                                                </div>
+                                                            </li>
+                                                            <li class="form_field">
+                                                                <label class="form_field_label">
+                                                                    Label + radio + options
+                                                                </label>
+                                                                <div class="form_field_inputs">
+                                                                    <input type="radio" value="" /><label>Yes</label>
+                                                                    <input type="radio" value="" /><label>No</label>
+                                                                </div>
+                                                            </li>
+                                                        </ol>
+                                                        <div class="form_actions">
+                                                            <button class="button button--primary">continuar</button>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </section>
+                </section>
+                <section id="lazyimg" class="styleguide-section">
+                    <h1 class="guide-beta">Image lazy</h1>
+                    <p>Utilizamos el Octopus Image Lazy Loaded para condicionar la carga de imágenes a la ejecución de un determinado evento (scroll, click, etc.). 
+                    </p>
+                    <section class="guide-subsection" id="normaltable">
+                        <h2 class="guide-gamma">Image lazy loaded</h2>
+                        <p><small>CSS CLASSES:</small> <code class="guide-class">o-image-wrapper</code> <code class="guide-class">o-image</code></p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">    
+    &lt;div class=&quot;o-image-wrapper&quot;&gt;
+        &lt;img onerror=&quot;this.src = &#39;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADAQMAAACOOjyFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjAAMAAAYAAegKKqQAAAAASUVORK5CYII=&#39;&quot; id=&quot;lazy&quot; class=&quot;o-image&quot; src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADAQMAAACOOjyFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjAAMAAAYAAegKKqQAAAAASUVORK5CYII=&quot; data-lazy-src=&quot;http://lorempixel.com/1024/768/nature/&quot; /&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;button id=&quot;loadimage&quot; onclick=&quot;$(&#39;#lazy&#39;).removeClass(&#39;o-image--lazy&#39;)&quot; class=&quot;button button--primary&quot;&gt;Load image&lt;/button&gt;&lt;/p&gt;       
+                                </code></pre>
+                            </div>
+                            <div class="html-example">
+                                <div class="styleguide-exemple">Example</div>
+                                <div class="o-image-wrapper">
+                                    <img onerror="this.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADAQMAAACOOjyFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjAAMAAAYAAegKKqQAAAAASUVORK5CYII='" id="lazy" class="o-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAADAQMAAACOOjyFAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjAAMAAAYAAegKKqQAAAAASUVORK5CYII=" data-lazy-src="http://lorempixel.com/1024/768/nature/" />
+                                </div>
+                                <p><button id="loadimage" onclick="$('#lazy').removeClass('o-image--lazy')" class="button button--primary">Load image</button></p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                    <!--<section class="guide-subsection" id="validationmsg">
+                        <h2 class="guide-gamma">Validation messages</h2>
+                        <p><small>CSS CLASSES:</small> <code class="guide-class">list-numbered</code></p>
+                        <div class="wrapper-code-exemple">
+                            <a href="#" class="button button--small" data-show-code>Show code</a>
+                            <div class="code-container">
+                                <pre class="prettyprint">
+                                <code class="code-example" id="form-code">
+        &lt;ol class=&quot;list-numbered&quot;&gt;
+            &lt;li&gt;First list item&lt;/li&gt;
+            &lt;li&gt;
+                Segond list item with some text: ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            &lt;/li&gt;
+            &lt;li&gt;Third list item&lt;/li&gt;
+        &lt;/ol&gt;
+                            </code></pre>
+                            </div>
+                            <div class="html-example">
+                                <table class="table guide-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Demo Html</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form_field_inputs">
+                                                    <input type="text" value="" />
+                                                    <span class="val-error-under">
+                                                        <span class="val-msg">Acepta para continuar</span>
+                                                    </span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>-->
+
+
+</div>
+        </div>
+
+        <footer class="footer">
+            <section class="footer_corp">
+                <div class="footer_corp_websites">
+                    <a href="http://www.schibsted.com" class="footer_corp_websites_logo">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAApCAMAAAD6UwK7AAAAmVBMVEX////39/fv9fjv7+/k7fTm5ubb5/DR4/De3t7O3urW1tbB2evD1eLMzMy1zeDFxcWmxNq9vb2Tvdu1tbWVtdGtra2Irs2lpaV0qtGZmZlkocyMjIxXlMCEhIRHg7Nzc3M6eq1ra2sydapmZmYjaqNbW1sVYp5SUlIJWZlLS0sHV5cAUpRDQ0MATJEASI46PDwAQYozMzP///+fjQKxAAAAM3RSTlP//////////////////////////////////////////////////////////////////wBxnr2OAAACHElEQVQ4y4WT67abIBCFB4oYWo1Jk2jQaDyK14Qpvv/LlXhrTo9rne0flh8MM3sG6B8b0mj1WvSwwRHbWqlW602ObewxAEK9Qm9wLDhYmisON/zKtSIWg2dMuMnx8MLgal1c1Ub8ejwOUGi9lZ8uJgwH89iqT+czBxt8i6uFn822P3zmpNZb3JyXAKHZ4v8uYP3/fMwI98sGa88bR6zr1jYN1wr2b1z3V0EJ3Wd2gzdz2q4clbtkhZgtAfLV/3apyt5qejYv44VjaA2NQzqlbX6vsZbzHGJjjBo3FGa5IDaIL65rYKM34dj681KhOB8OI1djLQ/MmBVZUxlX03lvnNZH+5K+Tdjr+76e7mfkzUZzmEdk9QfPtqx1wtSa/cJtAlTNG7AXU//f3wfegN60LcdgPjpJYvw0X3gjwM/xLZzMPyzR1v6hCmdbqXdV0+Mb+fgUrYzBOs+yXD2sk7gKslV5XljlefYu+FbHxKHJiQQQOP5ORsRJjoGUwUUefXkESLsoqJImqaCLyuTjnjYWPqvLEAVdWnXgVx9+A/BzqIbTXTbNRTYS0gsd7n75IxggCuSz2UnZOc9LmaZRd/IHJ5XOn8DpgmSAS1n6x6b0E0gDearKIKlSiI6kKWVS3XfwudtfJRgFzhifPsq5YJwzahf89QcEYUTYsREvSilzXctcTrhrf/E97MUvToUVpcL1KAHBPZdR5jFCBd3/BaJWgC8u715pAAAAAElFTkSuQmCC" alt="schibsted" />
+                    </a>
+                    <b>Otras webs de Schibsted:</b>
+                    <ul>
+                        <li><a data-xiti-tag="SchibstedInmobiliaria-pie" data-xiti-type="Exit" href="http://www.scm-re.com/" target="_blank" title="Nuestras web de inmobiliaria en Europa">inmobiliaria en Europa</a></li>
+                        <li><a href="http://www.inmogeo.com/" target="blank" title="oficinas, locales comerciales y naves industriales">inmogeo.com</a></li>
+                        <li><a href="http://www.segundamano.es/" target="blank" title="anuncios segunda mano">segundamano.es</a></li>
+                        <li><a href="https://www.infojobs.net/" target="" title="Ofertas de empleo">Infojobs.net</a></li>
+                        <li><a href="http://www.coches.net/" target="blank" title="Coches de ocasión">coches.net</a></li>
+                        <li><a href="http://www.motos.net/" target="blank" title="Motos de ocasión">motos.net</a></li>
+                        <li><a href="http://www.lectiva.com/" target="blank" title="Cursos y formación">lectiva.com</a></li>
+                        <li><a href="http://www.20minutos.es/" target="blank" title=" 20minutos">20minutos.es</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="footer_copyright">
+                <small>
+                    © 2014 Schibsted Classified Media Spain S.L.
+
+                    <ul class="footer_copyright_legal">
+                        <li><a href="/aviso-legal__fotocasa.aspx" id="lnk-legalAdvise" target="" title="">Aviso Legal</a></li>
+                        <li><a href="/proteccion-datos__fotocasa.aspx" id="lnk-legalDataProtection" target="" title="">Protección de datos</a></li>
+                        <li><a href="/aviso-legal__fotocasa.aspx#useofcookies" id="lnk-legalCookieInformation" target="_parent" title="">Política de cookies</a></li>
+                    </ul>
+
+                    <span class="footer_handcrafted">Hecho a mano con <i class="fc-icon-love" title="love"></i></span>
+                </small>
+            </section>
+
+
+
+
+        </footer>
+    </div>
+
+    
+
+    <script>
+        $("#loadimage").on("click", function () {
+            var src = $("#lazy").data("lazy-src");
+
+            $("#lazy").removeClass('o-image--lazy').attr("src", src).addClass("o-image--loading");
+
+            $("#lazy").on("load", function () {
+                
+                $(this).removeClass("o-image--loading").addClass("o-image--loaded");
+            });
+        });
+    </script>
+</body>
+</html>
