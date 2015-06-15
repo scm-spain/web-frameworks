@@ -1,25 +1,17 @@
-(function(){
-	infojobs.addEventListener('click', function(e){
-		e.preventDefault();
-		wrapper.src = e.currentTarget.href;
+;(function(d) {
+	var navElements = d.querySelectorAll('nav a');
+	var wrapper = d.getElementById('wrapper');
 
-	});
+	[].forEach.call( navElements, function( target ){
+        target.addEventListener('click', function(e){
+          e.preventDefault();
 
-	fotocasa.addEventListener('click', function(e){
-		e.preventDefault();
-		wrapper.src = e.currentTarget.href;
+          [].forEach.call( navElements, function( target ){
+            target.classList.remove('active');
+          });
 
-	});
-
-	segundamano.addEventListener('click', function(e){
-		e.preventDefault();
-		wrapper.src = e.currentTarget.href;
-
-	});
-
-	coches.addEventListener('click', function(e){
-		e.preventDefault();
-		wrapper.src = e.currentTarget.href;
-
-	});
-})();
+          e.currentTarget.classList.add('active');
+          wrapper.src = e.currentTarget.href;
+        });
+    });
+})(document);
